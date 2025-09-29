@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vantagens da Conteinerização</title>
+  <meta name="description" content="Principais vantagens da conteinerização com Docker">
+  
+  <link rel="stylesheet" href="../styles/vantagens-conteinerizacao.css">
+</head>
+<body>
+  <header>
+    <h1>Meu Projeto</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre-docker.html">Docker</a>
+      <a href="/porque-empresas.html">Por que empresas utilizam</a>
+      <a href="/vantagens-conteinerizacao.html">Vantagens</a>
+      <a href="/relatorio-actions.html">Relatório</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Vantagens da Conteinerização</h2>
+    <p>A conteinerização revolucionou a forma como aplicações são desenvolvidas, distribuídas e executadas. Utilizando Docker e tecnologias semelhantes, empresas e desenvolvedores podem alcançar mais eficiência, consistência e escalabilidade.</p>
+
+    <div class="card">
+      <h3>Principais vantagens:</h3>
+      <ul>
+        <li><strong>Isolamento:</strong> cada container roda de forma independente, evitando conflitos entre dependências.</li>
+        <li><strong>Reprodutibilidade:</strong> ambientes de desenvolvimento, teste e produção tornam-se idênticos.</li>
+        <li><strong>Escalabilidade:</strong> containers podem ser facilmente replicados e orquestrados por ferramentas como Kubernetes.</li>
+        <li><strong>Velocidade:</strong> containers são leves e iniciam rapidamente, agilizando deploys e testes.</li>
+        <li><strong>Portabilidade:</strong> a mesma aplicação pode rodar em diferentes sistemas operacionais e provedores de nuvem.</li>
+        <li><strong>Eficiência de recursos:</strong> containers compartilham o mesmo kernel, reduzindo o consumo em comparação a máquinas virtuais.</li>
+      </ul>
+    </div>
+
+    <p>Essas vantagens tornam a conteinerização uma prática essencial para equipes que buscam modernizar sua infraestrutura, adotar arquiteturas baseadas em microsserviços e otimizar custos de operação.</p>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Seu Projeto — Hospedado no Azure Cloud
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

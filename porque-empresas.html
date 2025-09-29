@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Por que empresas utilizam Docker?</title>
+  <meta name="description" content="Motivos para empresas utilizarem Docker">
+
+  <link rel="stylesheet" href="../styles/porque-empresas.css">
+</head>
+<body>
+  <header>
+    <h1>Meu Projeto</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre-docker.html">Docker</a>
+      <a href="/porque-empresas.html">Por que empresas utilizam</a>
+      <a href="/vantagens-conteinerizacao.html">Vantagens</a>
+      <a href="/relatorio-actions.html">Relatório</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Por que empresas utilizam Docker?</h2>
+    <p>Empresas de todos os tamanhos têm adotado o Docker como parte essencial de suas estratégias de desenvolvimento e operação. O motivo principal está na eficiência, escalabilidade e redução de custos que a conteinerização proporciona.</p>
+
+    <div class="card">
+      <h3>Motivos principais:</h3>
+      <ul>
+        <li><strong>Agilidade no desenvolvimento:</strong> o Docker permite criar ambientes de desenvolvimento consistentes e rápidos de configurar.</li>
+        <li><strong>Integração contínua:</strong> pipelines de CI/CD são simplificados, facilitando testes e deploys frequentes.</li>
+        <li><strong>Escalabilidade:</strong> aplicações podem ser replicadas em múltiplos containers para lidar com picos de acesso.</li>
+        <li><strong>Custos reduzidos:</strong> containers usam menos recursos que máquinas virtuais tradicionais, otimizando infraestrutura.</li>
+        <li><strong>Flexibilidade:</strong> containers podem ser executados em servidores locais, nuvem pública, privada ou híbrida.</li>
+      </ul>
+    </div>
+
+    <p>Grandes empresas como Netflix, Spotify e PayPal utilizam containers em larga escala para garantir estabilidade, escalabilidade e rapidez na entrega de novos recursos aos usuários.</p>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Seu Projeto — Hospedado no Azure Cloud
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

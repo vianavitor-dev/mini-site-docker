@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>O que é Docker?</title>
+  <meta name="description" content="Página explicativa sobre Docker">
+  <link rel="stylesheet" href="../styles/sobre-docker.css">
+
+</head>
+<body>
+  <header>
+    <h1>Meu Projeto</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre-docker.html">Docker</a>
+      <a href="/porque-empresas.html">Por que empresas utilizam</a>
+      <a href="/vantagens-conteinerizacao.html">Vantagens</a>
+      <a href="/relatorio-actions.html">Relatório</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>O que é Docker?</h2>
+    <p>O <strong>Docker</strong> é uma plataforma de código aberto que permite criar, implantar e executar aplicações dentro de <em>containers</em>. Um container é uma unidade leve e portátil que contém tudo o que a aplicação precisa para rodar: código, bibliotecas, dependências e configurações.</p>
+
+    <div class="card">
+      <h3>Principais vantagens do Docker:</h3>
+      <ul>
+        <li><strong>Portabilidade:</strong> um container pode rodar em qualquer ambiente que suporte Docker (Windows, Linux, macOS, servidores na nuvem).</li>
+        <li><strong>Consistência:</strong> garante que a aplicação rode sempre da mesma forma, independente da máquina.</li>
+        <li><strong>Escalabilidade:</strong> facilita a criação de múltiplas instâncias da aplicação, ajudando em arquiteturas baseadas em microsserviços.</li>
+        <li><strong>Eficiência:</strong> os containers são mais leves que máquinas virtuais, compartilhando o mesmo sistema operacional.</li>
+      </ul>
+    </div>
+
+    <p>Com Docker, desenvolvedores e equipes de operações conseguem colaborar de forma mais eficiente, simplificando o processo de desenvolvimento, testes e implantação em produção.</p>
+
+    <div class="card">
+      <h3>Exemplo de comando básico:</h3>
+      <pre style="background:#0b1220;padding:12px;border-radius:8px;overflow-x:auto;">
+$ docker run hello-world
+      </pre>
+      <p>Esse comando executa um container de teste para verificar se o Docker está funcionando corretamente em sua máquina.</p>
+    </div>
+
+    <p>O Docker é amplamente utilizado em conjunto com ferramentas como <strong>Kubernetes</strong>, para orquestração de containers em larga escala.</p>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Seu Projeto — Hospedado no Azure Cloud
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
