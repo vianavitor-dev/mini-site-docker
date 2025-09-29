@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>O que é Docker?</title>
+  <meta name="description" content="Página explicativa sobre Docker">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --accent:#0db7ed;
+      --muted:#94a3b8;
+      --card:#1a2333;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#061022 85%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+    header{
+      padding:16px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(6px);
+      position:sticky;
+      top:0;
+    }
+    header h1{font-size:20px}
+    nav a{
+      margin-left:18px;
+      text-decoration:none;
+      color:#e6eef8;
+      font-weight:500;
+      transition:color .2s ease;
+    }
+    nav a:hover{color:var(--accent)}
+
+    main{
+      flex:1;
+      padding:40px 20px;
+      max-width:880px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+    h2{font-size:32px;margin-bottom:16px;color:var(--accent)}
+    p{margin-bottom:16px;color:var(--muted)}
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:12px;
+      margin:24px 0;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    ul{margin-left:20px;margin-bottom:16px}
+    li{margin-bottom:8px;color:#cbd5e1}
+
+    footer{
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Projeto</h1>
+    <nav>
+      <a href="sobre-docker.html">Sobre o Docker</a>
+      <a href="porque-empresas.html">Por que empresas utilizam</a>
+      <a href="vantagens-conteinerizacao.html">Vantagens</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>O que é Docker?</h2>
+    <p>O <strong>Docker</strong> é uma plataforma de código aberto que permite criar, implantar e executar aplicações dentro de <em>containers</em>. Um container é uma unidade leve e portátil que contém tudo o que a aplicação precisa para rodar: código, bibliotecas, dependências e configurações.</p>
+
+    <div class="card">
+      <h3>Principais vantagens do Docker:</h3>
+      <ul>
+        <li><strong>Portabilidade:</strong> um container pode rodar em qualquer ambiente que suporte Docker (Windows, Linux, macOS, servidores na nuvem).</li>
+        <li><strong>Consistência:</strong> garante que a aplicação rode sempre da mesma forma, independente da máquina.</li>
+        <li><strong>Escalabilidade:</strong> facilita a criação de múltiplas instâncias da aplicação, ajudando em arquiteturas baseadas em microsserviços.</li>
+        <li><strong>Eficiência:</strong> os containers são mais leves que máquinas virtuais, compartilhando o mesmo sistema operacional.</li>
+      </ul>
+    </div>
+
+    <p>Com Docker, desenvolvedores e equipes de operações conseguem colaborar de forma mais eficiente, simplificando o processo de desenvolvimento, testes e implantação em produção.</p>
+
+    <div class="card">
+      <h3>Exemplo de comando básico:</h3>
+      <pre style="background:#0b1220;padding:12px;border-radius:8px;overflow-x:auto;">
+$ docker run hello-world
+      </pre>
+      <p>Esse comando executa um container de teste para verificar se o Docker está funcionando corretamente em sua máquina.</p>
+    </div>
+
+    <p>O Docker é amplamente utilizado em conjunto com ferramentas como <strong>Kubernetes</strong>, para orquestração de containers em larga escala.</p>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Seu Projeto — Hospedado no Azure Cloud
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
