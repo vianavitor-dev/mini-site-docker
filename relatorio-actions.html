@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Relatório do Build Automático – GitHub Actions</title>
+  <meta name="description" content="Relatório de execução do Build Automático com GitHub Actions">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --accent:#0db7ed;
+      --muted:#94a3b8;
+      --card:#1a2333;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),#061022 85%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+    header{
+      padding:16px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(6px);
+      position:sticky;
+      top:0;
+    }
+    header h1{font-size:20px}
+    nav a{
+      margin-left:18px;
+      text-decoration:none;
+      color:#e6eef8;
+      font-weight:500;
+      transition:color .2s ease;
+    }
+    nav a:hover{color:var(--accent)}
+
+    main{
+      flex:1;
+      padding:40px 20px;
+      max-width:880px;
+      margin:0 auto;
+      line-height:1.6;
+    }
+    h2{font-size:28px;margin-bottom:16px;color:var(--accent)}
+    h3{margin:16px 0 8px;color:#cbd5e1}
+    p{margin-bottom:16px;color:var(--muted)}
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:12px;
+      margin:24px 0;
+      box-shadow:0 6px 20px rgba(0,0,0,0.35);
+    }
+    pre{
+      background:#0c1320;
+      color:#d1eaff;
+      padding:14px 12px;
+      border-radius:7px;
+      overflow-x:auto;
+      font-size:14px;
+    }
+    ul{margin-left:20px;margin-bottom:16px}
+    li{margin-bottom:8px;color:#cbd5e1}
+    .status{font-size:1.1em;margin-bottom:12px}
+    .erro{color:#f87171}
+    .sucesso{color:#34d399}
+    footer{
+      padding:20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Projeto</h1>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre-docker.html">Docker</a>
+      <a href="/porque-empresas.html">Por que empresas utilizam</a>
+      <a href="/vantagens-conteinerizacao.html">Vantagens</a>
+      <a href="/relatorio-actions.html">Relatório</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Relatório do Build Automático (GitHub Actions)</h2>
+    <div class="card">
+      <p class="status"><b>Status:</b> <span class="erro">Erro</span></p>
+      <h3>Test Docker image: </h3>
+      <pre>
+        Run docker build -t teste-mini-explicador .
+        #0 building with "default" instance using docker driver
+
+        #1 [internal] load build definition from Dockerfile
+        #1 transferring dockerfile: 2B done
+        #1 DONE 0.0s
+        ERROR: failed to build: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+        Error: Process completed with exit code 1.
+      </pre>
+    </div>
+
+    <div class="card">
+      <h3>Resumo das tentativas de correção:</h3>
+      <ul>
+        <li><strong>commit #1</strong> feat: add Dockerfile (adiciona o Dockerfile) - <span class="sucesso">Erro corrigido</span></li>
+      </ul>
+    </div><br>
+
+    <div class="card">
+      <p class="status"><b>Status:</b> <span class="sucesso">Sucesso</span></p>
+      <h3>Test Docker image: </h3>
+      <pre style="height: 50vh">
+        ##[debug]Evaluating condition for step: 'Test Docker image'
+        ##[debug]Evaluating: success()
+        ##[debug]Evaluating success:
+        ##[debug]=> true
+        ##[debug]Result: true
+        ##[debug]Starting: Test Docker image
+        ##[debug]Loading inputs
+        ##[debug]Loading env
+        Run docker build -t teste-mini-explicador .
+        ##[debug]/usr/bin/bash -e /home/runner/work/_temp/ba1cb53f-6e74-48df-8d52-5a367d89d4d4.sh
+        #0 building with "default" instance using docker driver
+
+        #1 [internal] load build definition from Dockerfile
+        #1 transferring dockerfile: 184B done
+        #1 DONE 0.0s
+
+        #2 [auth] library/nginx:pull token for registry-1.docker.io
+        #2 DONE 0.0s
+
+        #3 [internal] load metadata for docker.io/library/nginx:latest
+        #3 DONE 0.4s
+
+        #4 [internal] load .dockerignore
+        #4 transferring context: 2B done
+        #4 DONE 0.0s
+
+        #5 [internal] load build context
+        #5 transferring context: 12.57kB done
+        #5 DONE 0.0s
+
+        #6 [1/3] FROM docker.io/library/nginx:latest@sha256:d5f28ef21aabddd098f3dbc21fe5b7a7d7a184720bc07da0b6c9b9820e97f25e
+        #6 resolve docker.io/library/nginx:latest@sha256:d5f28ef21aabddd098f3dbc21fe5b7a7d7a184720bc07da0b6c9b9820e97f25e done
+        #6 sha256:d107e437f7299a0db6425d4e37f44fa779f7917ecc8daf1e87128ee91b9ed3d3 6.29MB / 28.23MB 0.1s
+        #6 sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 0B / 44.07MB 0.1s
+        #6 sha256:f1c4d397f477546f880aadb7faeeee8eaa1d40e3ded29e62b598f64acf629912 627B / 627B 0.1s done
+        #6 sha256:d5f28ef21aabddd098f3dbc21fe5b7a7d7a184720bc07da0b6c9b9820e97f25e 10.25kB / 10.25kB done
+        #6 sha256:27637a97e3d1d0518adc2a877b60db3779970f19474b6e586ddcbc2d5500e285 2.29kB / 2.29kB done
+        #6 sha256:41f689c209100e6cadf3ce7fdd02035e90dbd1d586716bf8fc6ea55c365b2d81 8.59kB / 8.59kB done
+        #6 sha256:f72106e8650736e17bf673e22947b69f0074b76be40d5a728d0704a762d0d285 0B / 956B 0.1s
+        #6 sha256:d107e437f7299a0db6425d4e37f44fa779f7917ecc8daf1e87128ee91b9ed3d3 25.17MB / 28.23MB 0.2s
+        #6 sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 10.49MB / 44.07MB 0.2s
+        #6 sha256:f72106e8650736e17bf673e22947b69f0074b76be40d5a728d0704a762d0d285 956B / 956B 0.1s done
+        #6 sha256:a785b80f5a670dcc22bd75e3ffd6463d1b27c37f53a799479bf8ac95d2330952 0B / 1.21kB 0.2s
+        #6 sha256:899c83fc198bc29704e0f259db984cde12bfbb7cb60363667b108955b05fdd7a 404B / 404B 0.2s done
+        #6 sha256:d107e437f7299a0db6425d4e37f44fa779f7917ecc8daf1e87128ee91b9ed3d3 28.23MB / 28.23MB 0.2s done
+        #6 sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 26.21MB / 44.07MB 0.3s
+        #6 sha256:a785b80f5a670dcc22bd75e3ffd6463d1b27c37f53a799479bf8ac95d2330952 1.21kB / 1.21kB 0.2s done
+        #6 extracting sha256:d107e437f7299a0db6425d4e37f44fa779f7917ecc8daf1e87128ee91b9ed3d3 0.1s
+        #6 sha256:6c50e4e0c4393a7c1dc665d7c0f5b717d184ead14a9a0cfd50acd7997fe5e70d 1.40kB / 1.40kB 0.3s done
+        #6 sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 37.75MB / 44.07MB 0.4s
+        #6 sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 44.07MB / 44.07MB 0.5s done
+        #6 extracting sha256:d107e437f7299a0db6425d4e37f44fa779f7917ecc8daf1e87128ee91b9ed3d3 1.0s done
+        #6 extracting sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 0.1s
+        #6 extracting sha256:cb497a329a815b4a2fe3b785e16e4589f3fe899a7d46834671125ef0b21e85ba 0.7s done
+        #6 extracting sha256:f1c4d397f477546f880aadb7faeeee8eaa1d40e3ded29e62b598f64acf629912
+        #6 extracting sha256:f1c4d397f477546f880aadb7faeeee8eaa1d40e3ded29e62b598f64acf629912 done
+        #6 extracting sha256:f72106e8650736e17bf673e22947b69f0074b76be40d5a728d0704a762d0d285 done
+        #6 extracting sha256:899c83fc198bc29704e0f259db984cde12bfbb7cb60363667b108955b05fdd7a done
+        #6 extracting sha256:a785b80f5a670dcc22bd75e3ffd6463d1b27c37f53a799479bf8ac95d2330952 done
+        #6 extracting sha256:6c50e4e0c4393a7c1dc665d7c0f5b717d184ead14a9a0cfd50acd7997fe5e70d done
+        #6 DONE 2.4s
+
+        #7 [2/3] COPY pages /usr/share/nginx/html/pages
+        #7 DONE 0.0s
+
+        #8 [3/3] COPY styles /usr/share/nginx/html/styles
+        #8 DONE 0.0s
+
+        #9 exporting to image
+        #9 exporting layers
+        #9 exporting layers 0.6s done
+        #9 writing image sha256:36de8028bd9bf5804f23dee8f4310c375a83e3ed55f9a3455538153e37379a8a done
+        #9 naming to docker.io/library/teste-mini-explicador done
+        #9 DONE 0.6s
+        ##[debug]Finishing: Test Docker image
+      </pre>
+    </div>
+        
+  </main>
+
+  <footer>
+    © <span id="year"></span> Seu Projeto — Hospedado no Azure Cloud
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
